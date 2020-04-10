@@ -1,3 +1,4 @@
 <app-header></app-header>
+<app-changes (changes)="changes($event)"></app-changes>
 <app-posts *ngFor="let post of redditData | slice: 0:10" [post]="post">
 </app-posts>
