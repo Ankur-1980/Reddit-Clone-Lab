@@ -9,8 +9,10 @@ import { RedditService } from 'src/app/services/reddit.service';
 export class RedditComponent implements OnInit {
   bulkData;
   redditData;
+  numberOfPosts;
 
   constructor(private redditService: RedditService) {}
+  postsNumber: number[] = [5, 10, 15, 20];
 
   ngOnInit(): void {
     this.redditService.getData().subscribe((response) => {
@@ -23,5 +25,13 @@ export class RedditComponent implements OnInit {
   changes(x) {
     this.redditService.changeSubReddit(x);
     this.ngOnInit();
+  }
+
+  ofPosts(selectValue) {
+    if (selectValue === 0) {
+      this.numberOfPosts = null;
+    } else {
+      this.numberOfPosts = selectValue;
+    }
   }
 }

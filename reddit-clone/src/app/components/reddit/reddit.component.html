@@ -1,4 +1,20 @@
 <app-header></app-header>
+<div class="posts-select">
+  <label for="number-of-posts">Posts</label>
+  <select
+    [(ngModel)]="numberOfPosts"
+    (change)="ofPosts($event.target.value)"
+    name="number-of-posts"
+    id=""
+  >
+    <option *ngFor="let number of postsNumber" value="{{ number }}">
+      {{ number }}</option
+    >
+  </select>
+</div>
 <app-changes (changes)="changes($event)"></app-changes>
-<app-posts *ngFor="let post of redditData | slice: 0:10" [post]="post">
+<app-posts
+  *ngFor="let post of redditData | slice: 0:numberOfPosts"
+  [post]="post"
+>
 </app-posts>

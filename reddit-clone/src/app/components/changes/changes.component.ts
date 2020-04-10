@@ -1,5 +1,4 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { RedditService } from 'src/app/services/reddit.service';
 
 @Component({
   selector: 'app-changes',
@@ -8,7 +7,9 @@ import { RedditService } from 'src/app/services/reddit.service';
 })
 export class ChangesComponent implements OnInit {
   @Output() changes = new EventEmitter();
-  constructor(private redditService: RedditService) {}
+  @Output() ofPosts = new EventEmitter();
+
+  constructor() {}
 
   ngOnInit(): void {}
 
