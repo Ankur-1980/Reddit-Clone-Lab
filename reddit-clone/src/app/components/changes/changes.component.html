@@ -8,17 +8,3 @@
   />
   <button (click)="changeSubReddit(input)">Change Subreddit</button>
 </div>
-
-<div class="posts-select">
-  <label for="number-of-posts">Posts</label>
-  <select
-    (change)="numberPosts($event.target.value)"
-    name="number-of-posts"
-    id=""
-  >
-    <option value="0">Posts</option>
-    <option *ngFor="let number of postsNumber" value="{{ number }}">
-      {{ number }}</option
-    >
-  </select>
-</div>
