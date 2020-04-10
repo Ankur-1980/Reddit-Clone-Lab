@@ -1,1 +1,3 @@
-<p>reddit works!</p>
+<app-header></app-header>
+<app-posts *ngFor="let post of redditData | slice: 0:10" [post]="post">
+</app-posts>

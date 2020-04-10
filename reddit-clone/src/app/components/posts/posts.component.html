@@ -1,0 +1,13 @@
+<section class="posts">
+  <img src="{{ post.data.thumbnail }}" alt="" />
+
+  <div class="title">
+    <a href="https://www.reddit.com{{ post.data.permalink }}"
+      >{{ post.data.title }}
+    </a>
+  </div>
+  <div class="score">
+    <span>Score</span>
+    {{ post.data.score }}
+  </div>
+</section>

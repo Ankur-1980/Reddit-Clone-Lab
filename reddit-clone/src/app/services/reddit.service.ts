@@ -1,9 +1,16 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class RedditService {
+  subReddit = 'aww';
+  url = `https://www.reddit.com/r/${this.subReddit}/.json`;
 
-  constructor() { }
+  constructor(private httpClient: HttpClient) {}
+
+  getData() {
+    return this.httpClient.get(`${this.url}`);
+  }
 }
