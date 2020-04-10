@@ -1,0 +1,43 @@
+.changes {
+  display: flex;
+  flex-direction: row;
+  padding: 1rem;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+input,
+button {
+  padding: 0.5rem;
+
+  margin: 5px;
+  font-family: "Chonburi", cursive;
+  outline: none;
+}
+
+button {
+  border: none;
+  padding: 0.7rem;
+  font-weight: 500;
+  transition: 0.4s ease-in-out;
+  background-color: #899593;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.8;
+  color: #f0f1f4;
+}
+
+.posts-select {
+  font-family: "Chonburi", cursive;
+  color: #f0f1f4;
+}
+
+select {
+  font-family: "BioRhyme", serif;
+}
+
+label {
+  margin-right: 10px;
+}
