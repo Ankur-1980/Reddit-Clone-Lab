@@ -14,11 +14,14 @@ export class RedditComponent implements OnInit {
 
   ngOnInit(): void {
     this.redditService.getData().subscribe((response) => {
+      console.log(response);
+
       this.bulkData = response;
       this.redditData = this.bulkData.data.children;
-      console.log(this.redditData);
     });
   }
-
-  getDataFromService() {}
+  changes(x) {
+    this.redditService.changeSubReddit(x);
+    this.ngOnInit();
+  }
 }
