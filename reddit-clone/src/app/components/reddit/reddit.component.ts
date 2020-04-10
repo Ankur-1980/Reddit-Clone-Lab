@@ -12,12 +12,9 @@ export class RedditComponent implements OnInit {
   numberOfPosts;
 
   constructor(private redditService: RedditService) {}
-  postsNumber: number[] = [5, 10, 15, 20];
 
   ngOnInit(): void {
     this.redditService.getData().subscribe((response) => {
-      console.log(response);
-
       this.bulkData = response;
       this.redditData = this.bulkData.data.children;
     });
@@ -27,11 +24,7 @@ export class RedditComponent implements OnInit {
     this.ngOnInit();
   }
 
-  ofPosts(selectValue) {
-    if (selectValue === 0) {
-      this.numberOfPosts = null;
-    } else {
-      this.numberOfPosts = selectValue;
-    }
+  postNumber(x) {
+    this.numberOfPosts = x;
   }
 }

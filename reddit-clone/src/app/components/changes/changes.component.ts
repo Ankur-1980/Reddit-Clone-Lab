@@ -7,7 +7,9 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 })
 export class ChangesComponent implements OnInit {
   @Output() changes = new EventEmitter();
-  @Output() ofPosts = new EventEmitter();
+  @Output() postNumber = new EventEmitter();
+
+  postsNumber: number[] = [5, 10, 15, 20];
 
   constructor() {}
 
@@ -15,5 +17,11 @@ export class ChangesComponent implements OnInit {
 
   changeSubReddit(input) {
     this.changes.emit(input.value);
+  }
+
+  ofPosts(selectValue) {
+    if (selectValue !== 0) {
+      this.postNumber.emit(selectValue);
+    }
   }
 }
