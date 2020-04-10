@@ -9,6 +9,7 @@ import { RedditService } from 'src/app/services/reddit.service';
 export class RedditComponent implements OnInit {
   bulkData;
   redditData;
+  y;
 
   constructor(private redditService: RedditService) {}
 
@@ -23,5 +24,10 @@ export class RedditComponent implements OnInit {
   changes(x) {
     this.redditService.changeSubReddit(x);
     this.ngOnInit();
+  }
+
+  ofPosts(selectValue) {
+    this.y = selectValue;
+    console.log(`Reddit Component: ${this.y}`);
   }
 }
