@@ -1,6 +1,5 @@
 <section class="posts">
-  <img src="{{ post.data.thumbnail }}" alt="" />
-
+  <img [src]="post.data.thumbnail" />
   <div class="title">
     <a href="https://www.reddit.com{{ post.data.permalink }}"
       >{{ post.data.title }}
