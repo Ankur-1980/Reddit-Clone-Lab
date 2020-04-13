@@ -16,12 +16,14 @@ export class PostsComponent implements OnInit {
 
   ngOnInit(): void {
     this.checkImage();
+    console.log(this.post.data.thumbnail);
   }
 
   checkImage() {
     if (
       this.post.data.thumbnail === 'self' ||
-      this.post.data.thumbnail === ''
+      this.post.data.thumbnail === '' ||
+      this.post.data.thumbnail === 'default'
     ) {
       this.post.data.thumbnail = this.noPic;
     }
